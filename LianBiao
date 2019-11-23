@@ -1,0 +1,55 @@
+public class LianBiao {
+    private static Node mergoTwoLists (Node list1, Node list2) {
+        if (list1 == null) {
+            return list2;
+        }
+        if (list2 == null) {
+            return list1;
+        }
+        Node cur1 = list1;
+        Node cur2 = list2;
+        Node nHead = null;
+        Node nLast = null;
+        while (cur1 != null && cur2 != null) {
+            if (cur1 <= cur 2 ){
+                if (nHead == null) {
+                    nHead = cur1;
+                } else {
+                    nLast.next = cur1;
+                }
+                nLast = cur1;
+                cur1 = cur1.next;
+            }
+            if (cur2 <= cur 1 ){
+                if (nHead == null) {
+                    nHead = cur2;
+                } else {
+                    nLast.next = cur2;
+                }
+                nLast = cur2
+                cur2 = cur2.next;
+            }
+        }
+        if (cur1 != null) {
+            nLast.next = cur1;
+        } else {
+            nLast.next = cur2;
+        }
+        return nHead;
+    }
+    public static void main (String[] args){
+        Node n5= new Node (val: 5);
+        Node n4= new Node (val: 4,n5);
+        Node n3= new Node (val: 3,n4);
+        Node n2= new Node (val: 2,n3);
+        Node n1= new Node (val: 1,n2);
+        Node m2= new Node(val: 7, m3);
+        Node m4= new Node (val: 0,m2);
+        System.out.println (result);
+
+
+        }
+
+
+    }
+}
