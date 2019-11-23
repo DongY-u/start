@@ -1,0 +1,39 @@
+public class FenGe{
+    private  static Node Partition (Node head, int x){
+        int x= 6;
+        Node 小链表的头结点=null;
+        Node 小链表的尾结点=null;
+        Node  大链表的头结点=null;
+        NOde   大链表的尾结点=null；
+        while (cur != null ){
+            if (cur.val < x){
+                if (小链表的头结点= null) {
+                    小链表的头结点= cur;
+                }
+                else{ 小链表的尾结点.next= cur;
+                 }
+                 小链表的尾结点=cur;}
+                else {
+                if (大链表的头结点 = null) {
+                    大链表的头结点 = cur;
+                } else {
+                    大链表的尾结点.next = cur;
+                }
+                大链表的尾结点 = cur;
+                cur = cur.next;
+            }
+                    if (大链表的头结点==null) {
+                        return 大链表的尾结点;
+                    }
+                    if(小链表的尾结点==null){
+                        return 大链表的尾结点;
+                    }
+                }
+            }
+            public static void main (String [] args ){
+                Node
+            }
+        }
+
+    }
+}
