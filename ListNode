@@ -1,0 +1,16 @@
+public class ListNode {
+    public ListNode middleNode(ListNode head){
+        int count =0;
+        ListNode cur =head;
+        while( cur!=0){
+            count ++;
+             cur= cur.next;
+        }
+        int steps= count / 2;
+
+
+
+
+        }
+    }
+}
