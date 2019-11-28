@@ -1,0 +1,145 @@
+public class Book {
+    String title;
+    int currentCount;
+    int totalCount;
+}
+import java.util.Arrays;
+
+public class BookShelf {
+    private static final BookShelf instance = new BookShelf();
+    private BookShelf() {}
+
+    public static BookShelf getBookShelf() {
+        return instance;
+    }
+
+    Book[] array = new Book[100];
+    int size;
+
+    public void add(Book book) {
+        array[size++] = book;
+    }
+
+    public Book[] getBooks() {
+        return Arrays.copyOf(array, size);
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            User user = login();
+            System.out.println("欢迎 " + user.name + "光临");
+            user.menu();
+            System.out.println("请选择：");
+            int select = scanner.nextInt();
+            user.operation(select);
+        }
+    }
+
+    private static User login() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请填写用户名: ");
+        String name = scanner.nextLine();
+        System.out.println("请选择 1. 老师 2. 学生");
+        int select = scanner.nextInt();
+        User u;
+        if (select == 1) {
+            u = new TeacherUser();
+        } else {
+            u = new StudentUser();
+        }
+        u.name = name;
+        return u;
+    }
+}
+
+
+public class StudentUser extends User {
+    @Override
+    public void menu() {
+        System.out.println("1. 借书");
+        System.out.println("2. 还书");
+    }
+
+    @Override
+    public void operation(int select) {import java.util.Scanner;
+
+public class TeacherUser extends User {
+    @Override
+    public void menu() {
+        System.out.println("1. 上架");
+        System.out.println("2. 下架");
+        System.out.println("3. 现有书展示");
+    }
+
+    @Override
+    public void operation(int select) {
+        switch (select) {
+            case 1:
+                addBook();
+                break;
+            case 2:
+                removeBook();
+                break;
+            case 3:
+                listBooks();
+                break;
+        }
+    }
+
+    private void listBooks() {
+        BookShelf bookShelf = BookShelf.getBookShelf();
+        Book[] books = bookShelf.getBooks();
+        System.out.println("书名, 当前数量, 总数");
+        for (Book book : books) {
+            System.out.println(book.title + ", " + book.currentCount + ", " + book.totalCount);
+        }
+    }
+
+    private void removeBook() {
+    }
+
+    private void addBook() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入书名：");
+        String title = scanner.nextLine();
+        System.out.println("这次上架多少本：");
+        int count = scanner.nextInt();
+
+        Book book = new Book();
+        book.title = title;
+        book.totalCount = count;
+        book.currentCount = count;
+
+        BookShelf bookShelf = BookShelf.getBookShelf();
+        bookShelf.add(book);
+        System.out.println("上架成功");
+    }
+}
+
+public abstract class User {
+    public String name;
+
+    public abstract void menu();
+    public abstract void operation(int select);
+}
+        switch (select) {
+            case 1:
+                borrowBook();
+                break;
+            case 2:
+                returnBook();
+                break;
+        }
+    }
+
+    private void returnBook() {
+    }
+
+    private void borrowBook() {
+    }
+}
+
