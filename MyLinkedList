@@ -1,0 +1,34 @@
+public class MyLinkedList implements MyList{
+    @java.lang.Override
+    public void pushFront(int element) {
+        Node node =new Nod();
+        node.val=element ;
+        node.next=head;
+        head=node;
+    }
+
+    @java.lang.Override
+    public void pushBack(int element) {
+
+    }
+
+    @java.lang.Override
+    public void popFront() {
+
+    }
+
+    @java.lang.Override
+    public void popBack() {
+
+    }
+
+    @java.lang.Override
+    public int get(int index) {
+        return 0;
+    }
+
+    @java.lang.Override
+    public void set(int index, int element) {
+
+    }
+}
