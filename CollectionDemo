@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+
+public class CollectionDemo {
+    public static void main(String[] args) {
+        Collection<String>  list = new ArrayList<>();
+        System.out.println(list.size());  // 0
+        System.out.println(list.isEmpty()); // true
+        list.add("陕科大");
+        list.add("西工大");
+        System.out.println(list.size());  // 2
+        System.out.println(list.isEmpty()); // false
+        for(String str : list)
+        {
+            System.out.println(str);   // 陕科大， 西工大
+        }
+        list.remove("西工大");
+        System.out.println(list.size());  // 1
+        System.out.println(list.isEmpty());  // false
+        Object[] objArr = list.toArray();
+        System.out.println(objArr);
+
+        Collection<String> list2 = new LinkedList<>();
+        list2.add("比特科技");
+        list2.remove("陕科大");
+        System.out.println(list2.size());   // 1
+        System.out.print(list2.isEmpty());  // false
+    }
+
+
+}
